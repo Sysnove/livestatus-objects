@@ -9,7 +9,7 @@ def read(fname):
  
 setup(
     name='livestatus-objects',
-    version='0.1',
+    version='0.2',
     packages=find_packages(),
     author="Guillaume Subiron",
     author_email="maethor+pip@subiron.org",

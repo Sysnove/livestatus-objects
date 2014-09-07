@@ -165,3 +165,7 @@ class Hostgroup(LivestatusObject):
     @classmethod
     def get(cls, server, name):
         return cls._get(server, ['name = %s' % name])
+
+    @property
+    def members(self):
+        return Host.find(self._server, ['groups >= %s' % self.name])

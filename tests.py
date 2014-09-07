@@ -26,4 +26,4 @@ def test_get_service(server):
 def test_get_hostgroup(server):
     hostgroup = Hostgroup.get(server, 'infra')
     assert hostgroup.name == 'infra'
-    assert hostgroup.members[0].startswith('infra-')
+    assert 'infra' in hostgroup.members[0].groups
