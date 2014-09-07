@@ -23,8 +23,6 @@ setup(
         "Intended Audience :: Developers",
         "Intended Audience :: System Administrators",
         "Programming Language :: Python :: 3.3",
-        "Topic :: Software Development :: Libraries :: Python Modules"
-        "Topic :: System :: Monitoring"
     ],
     license="WTFPL",
 )

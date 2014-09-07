@@ -149,3 +149,19 @@ class Service(LivestatusObject):
     @property
     def host(self):
         return Host.get(self._server, self.host_name)
+
+
+class Hostgroup(LivestatusObject):
+    """Livestatus Hostgroup."""
+
+    _resource = "hostgroups"
+
+    def __repr__(self):
+        return self.name
+
+    def __str__(self):
+        return self.name
+
+    @classmethod
+    def get(cls, server, name):
+        return cls._get(server, ['name = %s' % name])

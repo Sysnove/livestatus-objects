@@ -1,6 +1,6 @@
 import pytest;
 
-from livestatus_objects import LivestatusServer, Host, Service, NoResultFound
+from livestatus_objects import LivestatusServer, Host, Service, Hostgroup, NoResultFound
 
 @pytest.fixture()
 def server():
@@ -22,3 +22,8 @@ def test_get_service(server):
     service = Service.get(server, 'Load', 'infra-mon01')
     assert service.description == 'Load'
     assert service.host.name == 'infra-mon01'
+
+def test_get_hostgroup(server):
+    hostgroup = Hostgroup.get(server, 'infra')
+    assert hostgroup.name == 'infra'
+    assert hostgroup.members[0].startswith('infra-')
